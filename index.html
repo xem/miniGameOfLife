@@ -2,22 +2,20 @@
 <html lang=en>
 <meta charset=utf-8>
 <style>
-	body { min-width: 1300px; font-family: Arial; }
+	body { min-width: 1300px; font: 12px Arial; }
 	body, input { margin: 0; padding: 0; line-height: 8px; text-align: center; }
-	span { border: 1px dotted; linr-height: 20px; padding: 5px; }
+	p { width: 1000px; border: 1px dotted; line-height: 14px; padding: 5px; margin: 0 auto; text-align: left; font-family: monospace; }
 </style>
 <title>Mini Game of Life</title>
 <body>
 	<br>
 	<h1>Mini Game of Life</h1>
 	<h2>A game of life engine in 138 bytes of JavaScript</h2>
-	<br>
-	<br>
-	<span>g=function(f,d,k,g,c,e,b,h){g=[];for(b=d*k;b--;){c=0;e=[d+1,d,d-1,1];for(h in e)c+=f[b+e[h]]+f[b-e[h]];g[b]=3==c||f[b]&&2==c?1:0}return g}</span>
-	<br>
-	<br>
-	<br>
-	<br>
+	<p>
+		/* Fill an array with 0's and 1's, and call g(array, width, height) */
+		<br>
+		g=function(f,d,k,g,c,e,b,h){g=[];for(b=d*k;b--;){c=0;e=[d+1,d,d-1,1];for(h in e)c+=f[b+e[h]]+f[b-e[h]];g[b]=3==c||f[b]&&2==c?1:0}return g}
+	</p>
 	<br>
 	<script>
 	
@@ -359,12 +357,19 @@
 	<br>
 	<br>
 	2 - Iterate
-	<button onclick="go()">1 time</button>
+	<button onclick="clearInterval(interval); go()">1 time</button>
 	<button onclick="clearInterval(interval); interval = setInterval(go, 500);">2fps</button>
 	<button onclick="clearInterval(interval); interval = setInterval(go, 200);">5fps</button>
 	<button onclick="clearInterval(interval); interval = setInterval(go, 100);">10fps</button>
 	<button onclick="clearInterval(interval); interval = setInterval(go, 50);">20fps</button>
 	<button onclick="clearInterval(interval); interval = setInterval(go, 20);">50fps</button>
 	<button onclick="clearInterval(interval);">Stop</button>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	2013 - <a href="http://xem.github.io">Maxime Euzière</a>
 </body>
 </html>
