@@ -1,6 +1,6 @@
 Mini Game of Life.
 ==================
 
-138 bytes of JavaScript.
+A game of life engine in 130 bytes of JavaScript.
 
 http://xem.github.io/miniGameOfLife
