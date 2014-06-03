@@ -13,9 +13,9 @@
   <h1>Mini Game of Life <small>v.0.3</small></h1>
   <h2>A game of life engine in 130 bytes of JavaScript</h2>
   <p>
-    /* Fill an array with 0's and 1's, and call g(array, width, height) */
+    /* Fill an array with 0's and 1's, and call this function with the parameters (array, width, height) */
     <br>
-    g=function(f,c,g,d,e,b,h){g=[];e=[c+1,c,c-1,1];for(b=c*c;b--;g[b]=3==d||f[b]&&2==d,d=0)for(h in e)d+=f[b+e[h]]+f[b-e[h]];return g}
+    function(f,c,d,h){for(var g=[],e=[c+1,c,c-1,1],b=c*c;b--;g[b]=3==d||f[b]&&2==d,d=0)for(h in e)d+=f[b+e[h]]+f[b-e[h]];return g}
   </p>
   <br>
   <script>
@@ -373,7 +373,7 @@
 // @param m: placeholder
 // @param i: placeholder
 // @param j: placeholder
-window.g = function(s, d, n, k, m, i, j){
+/*window.g = function(s, d, n, k, m, i, j){
   for(
     n = [],                           // Initialize next state
     m = [d + 1, d, d - 1, 1],         // Initialize the upper half of the neighbours indexes
@@ -385,10 +385,14 @@ window.g = function(s, d, n, k, m, i, j){
   for(j in m)                         // for each neighbour position
     k += s[i + m[j]] + s[i - m[j]]    // count the living neighbours
   return(n)                           // return the next state
-}
+}*/
   
 // Minified (130bytes!)
 // g=function(f,c,g,d,e,b,h){g=[];e=[c+1,c,c-1,1];for(b=c*c;b--;g[b]=3==d||f[b]&&2==d,d=0)for(h in e)d+=f[b+e[h]]+f[b-e[h]];return g}
+
+// 126b
+g=
+function(f,c,d,h){for(var g=[],e=[c+1,c,c-1,1],b=c*c;b--;g[b]=3==d||f[b]&&2==d,d=0)for(h in e)d+=f[b+e[h]]+f[b-e[h]];return g}
   
   </script>
   <br>
