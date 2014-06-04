@@ -10,13 +10,12 @@
 <title>Mini Game of Life</title>
 <body>
   <br>
-  <h1>Mini Game of Life <small>v.0.3</small></h1>
-  <h2>A game of life engine in 130 bytes of JavaScript</h2>
+  <h1>Mini Game of Life <small>v.0.4</small></h1>
+  <h2>A game of life engine in 126 bytes of JavaScript</h2>
   <p>
     /* Fill an array with 0's and 1's, and call this function with the parameters (array, width, height) */
     <br>
-    function(f,c,d,h){for(var g=[],e=[c+1,c,c-1,1],b=c*c;b--;g[b]=3==d||f[b]&&2==d,d=0)for(h in e)d+=f[b+e[h]]+f[b-e[h]];return g}
-  </p>
+    function(f,c,d,h){for(var g=[],e=[c+1,c,c-1,1],b=c*c;b--;g[b]=3==d||f[b]&&2==d,d=0)for(h in e)d+=f[b+e[h]]+f[b-e[h]];return g}</p>
   <br>
   <script>
   
@@ -392,7 +391,7 @@
 
 // 126b
 g=
-function(f,c,d,h){for(var g=[],e=[c+1,c,c-1,1],b=c*c;b--;g[b]=3==d||f[b]&&2==d,d=0)for(h in e)d+=f[b+e[h]]+f[b-e[h]];return g}
+function(f,c,d,h,g){for(var e=[c+1,c,c-1,1],b=c*c;b--;g[b]=3==d||f[b]&&2==d,d=0)for(h in e)d+=f[b+e[h]]+f[b-e[h]]}
   
   </script>
   <br>
