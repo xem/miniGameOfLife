@@ -1,4 +1,3 @@
-<meta charset=utf-8>
 <table id=t>
 <script>
 
@@ -16,8 +15,8 @@ a=[];                                                   // Initial state
       d=0;for(z in e=[1,8,9,10]){d+=a[k+e[z]]+a[k-e[z]]}// count cell's living neighbours
       b[k]=+(3==d||a[k]&&2==d);                         // update cell's value on next state (alive if it 3 living neighbours or if alive with 2 living neighbours)
       h+="<td width=20"                                 // write cell's html
-      +" onclick=innerHTML='oÂ®'[a[k="+k+"]=1-a[k]]>"    // click the cell to toggle state
-      +"oÂ®"[b[k]||0];                                   // display next state
+      +" onclick=innerHTML='o®'[a[k="+k+"]=1-a[k]]>"    // click the cell to toggle state
+      +"o®"[b[k]||0];                                   // display next state
     }
   }
   for(i in a){                                          // copy next state in initial state
