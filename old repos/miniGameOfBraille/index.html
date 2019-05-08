@@ -1,0 +1,92 @@
+<!doctype html>
+<meta charset=utf-8>
+<a href=//github.com/xem/miniGameOfBraille><img style="position:absolute;top:0;right:0;border:0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+<center style="font-family:arial">
+<h1>MiniGameOfBraille</h1>
+<pre id=p></pre>
+<br>
+<a href="index.min.html">Golfed version</a> - <a href="canvas.html">Canvas version</a>
+<br><br>
+© 2015,2016 - <a	href="//xem.github.io">Maxime Euziere</a>
+<script>
+// Init universe
+a=[];
+for(i=0;i<80*80;i++){
+	a[i]=~~(Math.random()*2);
+}
+
+// Loop
+setInterval(function(){
+
+	d=[];
+	
+	// Compute new generation
+	for(i=0;i<80;i++){
+		for(j=0;j<80;j++){
+			k=80*i+j;
+			f=0;
+			for(z in e=[1,79,80,81]){
+				f+=a[k+e[z]]+a[k-e[z]];
+			}
+			d[k]=3==f|a[k]&2==f;
+		}
+	}
+	a=d;
+	
+	// Convert in braille
+	c="";
+	for(i=0;i<80;i+=4){
+		for(j=0;j<80;j+=2){
+			b=0;
+			
+			// Dot 1
+			if(a[i*40+j]){
+				b+=0x1;
+			}
+			
+			// Dot 2
+			if(a[(i+1)*40+j]){
+				b+=0x2;
+			}
+			
+			// Dot 3
+			if(a[(i+2)*40+j]){
+				b+=0x4;
+			}
+			
+			// Dot 4
+			if(a[i*40+j+1]){
+				b+=0x8;
+			}
+			
+			// Dot 5
+			if(a[(i+1)*40+j+1]){
+				b+=0x10;
+			}
+			
+			// Dot 6
+			if(a[(i+2)*40+j+1]){
+				b+=0x20;
+			}
+			
+			// Dot 7
+			if(a[(i+3)*40+j]){
+				b+=0x40;
+			}
+			
+			// Dot 8
+			if(a[(i+3)*40+j+1]){
+				b+=0x80;
+			}
+					
+			// Add character to result
+			c+=String.fromCharCode(0x2800+b);
+		}
+		c+="\n";
+	}
+
+	// Draw
+	p.innerHTML=c;
+}, 100);
+
+</script>
